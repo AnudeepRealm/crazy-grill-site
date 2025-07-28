@@ -15,46 +15,46 @@ export const GALLERY_IMAGE_NAMES = ["classics.jpg", "causas.jpg", "ceviche.jpg",
 export const MENU = {
    "Dishes": [
       {
-         name: "Dishes 1",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
-         price: "50"
+         name: "Spiced Lamb Chops",
+         desc: "Tender, juicy lamb chops with a bold, aromatic spice rub",
+         price: "1500"
       },
       {
-         name: "Dishes 2",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
-         price: "16"
+         name: "Peri-Peri Grilled Chicken",
+         desc: "Spicy, smoky, citrus-marinated chicken grilled to absolute perfection",
+         price: "800"
       },
       {
-         name: "Dishes 3",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
+         name: "Tandoori Paneer Tikka",
+         desc: "Creamy paneer and crisp vegetables marinated in yogurt and spices",
          price: "14"
       },
       {
-         name: "Dishes 4",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
-         price: "20"
+         name : "Garlic Butter Prawn Skewers",
+         desc: "Plump, charred prawns smothered in rich garlic and herb butter",
+         price: "1800"
       }
    ],
    "Drinks": [
-      {
-         name: "Drinks 1",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
-         price: "6"
+       {
+        name: "Tamarind Whiskey Sour",
+        desc: "A tangy Indian twist on a classic, with tamarind pulp and whiskey.",
+        price: "1350"
       },
       {
-         name: "Drinks 2",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
-         price: "8"
+        name: "Masala Chai Martini",
+        desc: "A creamy blend of vodka, aromatic chai spices, and a hint of ginger.",
+        price: "1500"
       },
       {
-         name: "Drinks 3",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
-         price: "3.99"
+        name: "Jamun Gin Fizz",
+        desc: "A vibrant, fizzy cocktail made with gin and fresh jamun fruit.",
+        price: "1250"
       },
       {
-         name: "Drinks 4",
-         desc: "Consectetur adipisicing elit. Soluta, impedit, saepe",
-         price: "8.50"
+        name: "Khatta Aam Collins",
+        desc: "A refreshing cooler with raw mango, vodka, and a hint of cumin.",
+        price: "1100"
       }
    ]
 };
