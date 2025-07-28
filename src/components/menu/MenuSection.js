@@ -99,7 +99,7 @@ const MenuItem = ({ name, desc, price }) => {
             <p className="text-gray-500 font-light text-xs">{desc}</p>
          </div>
          <div className="">
-            <p className="text-gray-500">{price}$</p>
+            <p className="text-gray-500">{price}</p>
          </div>
       </div>
    );
