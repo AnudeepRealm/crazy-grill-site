@@ -27,7 +27,7 @@ export const MENU = {
       {
          name: "Tandoori Paneer Tikka",
          desc: "Creamy paneer and crisp vegetables marinated in yogurt and spices",
-         price: "14"
+         price: "600"
       },
       {
          name : "Garlic Butter Prawn Skewers",
