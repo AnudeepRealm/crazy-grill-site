@@ -2,13 +2,11 @@
    "main": "src/index.jsx",
    "author": "Odatsme",
    "license": "LICENSED",
-   "homepage": "https://AnudeepRealm.github.io/crazy-grill-site",
-   "scripts": {
-      "start": "webpack serve --mode development --hot --config webConfig/wp_config.js",
-      "build": "webpack build --mode production --config webConfig/wp_config.js",
-      "predeploy": "yarn build",
-      "deploy": "gh-pages -d dist"
-   },
+  "scripts": {
+  "clean": "rimraf dist",
+  "start": "webpack serve --mode development --hot --config webConfig/wp_config.js",
+  "build": "webpack build --mode production --config webConfig/wp_config.js"
+},
    "dependencies": {
       "bootstrap": "^5.2.3",
       "formik": "^2.2.9",

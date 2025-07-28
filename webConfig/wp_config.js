@@ -5,98 +5,100 @@ const Path = require("path");
 const webpack = require("webpack");
 
 module.exports = (env, argv) => {
-   return {
-      entry: "./src/index.js",
-      output: {
-         path: Path.resolve(Path.dirname(__dirname), "dist"),
-         filename: "index.js",
-         publicPath: "/"
-      },
-      devServer: {
-         hot: true,
-         historyApiFallback: {
-            index: "/index.html"
-         },
-         static: {
-            directory: "./public"
-         },
-         host: "0.0.0.0",
-         watchFiles: {
-            options: {
-               ignored: ["node_modules"]
-            }
-         },
-         proxy: [
-  {
-    context: ["/api"],
-    target: "http://taburestaurant.ca/",
-    changeOrigin: true,
-    secure: false
-  }
-]
-      },
-      module: {
-         rules: [
-            {
-               test: /\.svg$/,
-               use: ["@svgr/webpack"]
+    return {
+        entry: "./src/index.js",
+        output: {
+            path: Path.resolve(Path.dirname(__dirname), "dist"),
+            filename: "index.js",
+            publicPath: "/"
+        },
+        devServer: {
+            hot: true,
+            historyApiFallback: {
+                index: "/index.html"
             },
-            {
-               test: /\.(js|jsx)?$/,
-               exclude: /node_modules/,
-               use: [
-                  {
-                     loader: "babel-loader"
-                  }
-               ]
+            static: {
+                directory: "./public"
             },
-            {
-               test: /\.html$/,
-               use: [
-                  {
-                     loader: "html-loader"
-                  }
-               ]
+            host: "0.0.0.0",
+            watchFiles: {
+                options: {
+                    ignored: ["node_modules"]
+                }
             },
-            {
-               test: /\.css$/,
-               use: ["style-loader", "css-loader", "postcss-loader"]
-            },
-            {
-               test: /\.(png|svg|jpg|jpeg|gif)$/i,
-               type: "asset/resource"
-            }
-         ]
-      },
-      plugins: [
-         //Useful for OSX systems
-         new CaseSensitivePathsPlugin(),
-         //create an Html file with the script tag setted to the bundle file when building
-         new HtmlWebPackPlugin({
-            template: "./public/index.html",
-            filename: "index.html",
-            minify: {
-               collapseWhitespace: true,
-               removeComments: true,
-               removeRedundantAttributes: true,
-               removeScriptTypeAttributes: true,
-               removeStyleLinkTypeAttributes: true,
-               useShortDoctype: true
-            }
-         }),
-         //copy static files from public folder except index.html
-         new CopyPlugin({
-            patterns: [
-               {
-                  from: "public",
-                  to: "./",
-                  filter: resourcePath => Path.basename(resourcePath) !== "index.html"
-               }
+            proxy: [
+                {
+                    context: ["/api"],
+                    target: "http://taburestaurant.ca/",
+                    changeOrigin: true,
+                    secure: false
+                }
             ]
-         }),
-         new webpack.DefinePlugin({
-            "process.env": "{}"
-         })
-      ]
-   };
+        },
+        module: {
+            rules: [
+                {
+                    test: /\.svg$/,
+                    use: ["@svgr/webpack"]
+                },
+                {
+                    test: /\.(js|jsx)?$/,
+                    exclude: /node_modules/,
+                    use: [
+                        {
+                            loader: "babel-loader"
+                        }
+                    ]
+                },
+                {
+                    test: /\.html$/,
+                    use: [
+                        {
+                            loader: "html-loader"
+                        }
+                    ]
+                },
+                {
+                    test: /\.css$/,
+                    use: ["style-loader", "css-loader", "postcss-loader"]
+                },
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: "asset/resource"
+                }
+            ]
+        },
+        plugins: [
+            //Useful for OSX systems
+            new CaseSensitivePathsPlugin(),
+            //create an Html file with the script tag setted to the bundle file when building
+            new HtmlWebPackPlugin({
+                template: "./public/index.html",
+                filename: "index.html",
+                minify: {
+                    collapseWhitespace: true,
+                    removeComments: true,
+                    removeRedundantAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true,
+                    useShortDoctype: true
+                }
+            }),
+            //copy static files from public folder except index.html and .DS_Store
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: "public",
+                        to: "./",
+                        filter: resourcePath =>
+                            Path.basename(resourcePath) !== "index.html" &&
+                            Path.basename(resourcePath) !== ".DS_Store" // Added this condition
+                    }
+                ]
+            }),
+            new webpack.DefinePlugin({
+                "process.env": "{}"
+            })
+        ]
+    };
 };
