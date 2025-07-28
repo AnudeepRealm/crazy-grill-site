@@ -5,7 +5,7 @@ export const COLORS = {
 };
 export const MAP_SOURCE = {
    mapSource:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387194.0622236789!2d-74.30932477148002!3d40.69701929469058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20%C3%89tat%20de%20New%20York%2C%20%C3%89tats-Unis!5e0!3m2!1sfr!2sca!4v1710686778550!5m2!1sfr!2sca"
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4604299226917!2d78.39775617481787!3d17.43766318345809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91463b7ebb4b%3A0x16a4ba4ed2262687!2sRoad%20No.%2036%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1753719528368!5m2!1sen!2sin"
 };
 
 export const UPCOMING_EVENTS = [
