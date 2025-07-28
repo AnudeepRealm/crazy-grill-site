@@ -27,7 +27,7 @@ const Footer = () => {
                   </div>
                   <div className="infoWidget">
                      <ul>
-                        <li>55 Grilly Est New York, NY.</li>
+                        <li>road no.36, Jubilee Hills, Hyderabad </li>
                         <li>
                            {t("FIND_LOCATION_TEXT")} <a href="/contact/#location">{t("HERE")}</a>.
                         </li>
