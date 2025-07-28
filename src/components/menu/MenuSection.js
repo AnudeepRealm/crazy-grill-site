@@ -56,8 +56,8 @@ const MenuSection = () => {
          <SectionTitle
             subTitle={"Menu"}
             title={sectionTitle.selected}
-            firstLineDescription={"Porro eveniet, autem ipsam corrupti consectetur cum."}
-            secondLineDescription={"Repudiandae dignissimos fugiat sit nam."}
+            firstLineDescription={"Experience the primal art of cooking with fire and smoke."}
+            secondLineDescription={"Serving up the best from our grill, straight to your plate."}
             bgColor={COLORS.tertiary}
          />
          {renderMenu()}
